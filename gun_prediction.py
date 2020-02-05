@@ -23,7 +23,8 @@ n_class = len(gun)
 class_to_num = dict(zip(gun, range(n_class)))
 print("Possible gun are ", class_to_num.keys())
 
-X = cv2.imread('/Users/danielochoa/Library/Mobile Documents/com~apple~CloudDocs/TSU/Classes/Spring 2020/Senior Project 2/Gunshot-sound-classification-using-deep-learning-master-1/Train/HPS_11.png') # Path of Spectrogram image for prediction
+#X = cv2.imread('/Users/danielochoa/Library/Mobile Documents/com~apple~CloudDocs/TSU/Classes/Spring 2020/Senior Project 2/Gunshot-sound-classification-using-deep-learning-master-1/Train/HPS_11.png') # Path of Spectrogram image for prediction
+X = cv2.imread('/Users/danielochoa/Desktop/myplot.png') # Path of Spectrogram image for prediction
 X = cv2.resize(X, (299,299))
 X = np.expand_dims(X, axis=0) 
 

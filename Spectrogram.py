@@ -5,7 +5,7 @@ import librosa.display
 from librosa.feature import melspectrogram
 import matplotlib.pyplot as plt
 
-y, sr = librosa.load('/Users/danielochoa/Library/Mobile Documents/com~apple~CloudDocs/TSU/Classes/Spring 2020/Senior Project 2/Gunshot-sound-classification-using-deep-learning-master-1/shotgun.mp3')
+y, sr = librosa.load('/Users/danielochoa/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/40_smith_wesson_8x_gunshot-mike-koenig.mp3')
 
 counts = np.float32(range(0,len(y)))
 
