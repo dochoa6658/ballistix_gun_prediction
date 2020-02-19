@@ -8,8 +8,15 @@ import matplotlib.pyplot as plt
 y, sr = librosa.load('/Users/danielochoa/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/40_smith_wesson_8x_gunshot-mike-koenig.mp3')
 
 counts = np.float32(range(0,len(y)))
+print('sample rate', sr)
+print('time series', y)
+
+print('counts[4]', counts[len(counts)-1])
+print('counts[4]/sr', counts[len(counts)-1]/sr)
 
 f = [np.float32(i/sr) for i in counts]
+#print('/n')
+#print(f)
 
 plt.plot(f,y)
 plt.xlabel('Time')
