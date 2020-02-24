@@ -15,28 +15,32 @@ df.head()
 
 # Storing the length of df in variable n and then printing it for visual purposes.
 n = len(df)
-print('The length of of DataFrame is: ', n)
+print('The length of of DataFrame/n is: ', n, '\n')
 
 # Creating a 'set' of the types of weapons we are training the model for and storing it in variable 'gun'
 gun = set(df['gun'])
-print('Printing the set of "gun": ', gun)
+print('Printing the set of "gun": ', gun, '\n')
 
 # Storing the length of the of the set into n_class.
 n_class = len(gun)
-print('The length of gun variable now stored in n_class', n_class)
+print('The length of gun variable now stored in n_class', n_class, '\n')
 
 # Giving a value to each class in a dictionary format.
 class_to_num = dict(zip(gun, range(n_class)))
-print('Printing class_to_num: ', class_to_num)
+print('Printing class_to_num: ', class_to_num, '\n')
 num_to_class = dict(zip(range(n_class), gun))
-print('Printing num_to_class: ', num_to_class)
+print('Printing num_to_class: ', num_to_class, '\n')
 
 width = 299
 X = np.zeros((n, width, width, 3), dtype=np.uint8)
 y = np.zeros((n, n_class), dtype=np.uint8)
-for i in tqdm(range(n)):
-    X[i] = cv2.resize(cv2.imread('Train/%s.png' % df['id'][i]), (width, width))
-    y[i][class_to_num[df['gun'][i]]] = 1
+try:
+    for i in tqdm(range(n)):
+        X[i] = cv2.resize(cv2.imread('Train/%s.png' % df['id'][i]), (width, width))
+        y[i][class_to_num[df['gun'][i]]] = 1
+except Exception as e:
+    print(e)
+
 
 
 from keras.layers import *
