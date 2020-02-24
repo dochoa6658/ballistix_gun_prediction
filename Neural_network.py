@@ -9,17 +9,22 @@ import random
 # Reading file 'labels.csv.
 # Please read file labels to get full understanding of what is being loaded.
 df = pd.read_csv('labels.csv')
+
 # Test of the loaded DataFrame.
 df.head()
+
 # Storing the length of df in variable n and then printing it for visual purposes.
 n = len(df)
 print('The length of of DataFrame is: ', n)
+
 # Creating a 'set' of the types of weapons we are training the model for and storing it in variable 'gun'
 gun = set(df['gun'])
 print('Printing the set of "gun": ', gun)
+
 # Storing the length of the of the set into n_class.
 n_class = len(gun)
 print('The length of gun variable now stored in n_class', n_class)
+
 # Giving a value to each class in a dictionary format.
 class_to_num = dict(zip(gun, range(n_class)))
 print('Printing class_to_num: ', class_to_num)
