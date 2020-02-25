@@ -58,7 +58,7 @@ from keras.optimizers import *
 from keras.regularizers import *
 from keras.applications.inception_v3 import preprocess_input
 
-# 'get_features' is a method that receives
+# 'get_features' is a method that receives models from inceptionv3 and xception, and X layer
 def get_features(MODEL, data=X):
     cnn_model = MODEL(include_top=False, input_shape=(width, width, 3), weights='imagenet')
     
