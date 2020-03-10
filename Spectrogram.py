@@ -5,7 +5,8 @@ import librosa.display
 from librosa.feature import melspectrogram
 import matplotlib.pyplot as plt
 
-y, sr = librosa.load('/Users/danielochoa/Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/40_smith_wesson_8x_gunshot-mike-koenig.mp3')
+string01 = '/Users/danielochoa/Music/iTunes/iTunes Media/Music/www.FesliyanStudios.com/www.FesliyanStudios.com/www.FesliyanStudios.com.mp3'
+y, sr = librosa.load(string01)
 
 counts = np.float32(range(0,len(y)))
 print('sample rate', sr)
@@ -24,11 +25,13 @@ plt.ylabel('Amp')
 
 melspectrogram(y=y, sr=sr)
 
+# Discrete Fourier Transforms (DFT)
 D = np.abs(librosa.stft(y))**2
 
 S = librosa.feature.melspectrogram(S=D)
 
 S = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128,fmax = 8000)
+print(S)
 
 plt.figure(figsize=(12, 4))
 

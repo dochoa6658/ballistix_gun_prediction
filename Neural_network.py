@@ -39,13 +39,15 @@ X = np.zeros((n, width, width, 3), dtype=np.uint8)
 y = np.zeros((n, n_class), dtype=np.uint8)
 
 # Printing for example.
-#print('Printing X: ', X)
+print('Printing X: ', X)
 
 # creating all true where both are true.
 try:
     for i in tqdm(range(n)):
         X[i] = cv2.resize(cv2.imread('Train/%s.png' % df['id'][i]), (width, width))
         y[i][class_to_num[df['gun'][i]]] = 1
+        print('printing X[i]: ', X[i])
+        print('printing y[i]: ', y[i])
 except Exception as e:
     print(e)
 
