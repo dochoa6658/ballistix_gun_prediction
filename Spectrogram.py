@@ -5,7 +5,7 @@ import librosa.display
 from librosa.feature import melspectrogram
 import matplotlib.pyplot as plt
 
-string01 = '/Users/danielochoa/Music/iTunes/iTunes Media/Music/www.FesliyanStudios.com/www.FesliyanStudios.com/www.FesliyanStudios.com.mp3'
+string01 = 'mp3/12-Gauge-Pump-Action-Shotgun-Far-Gunshot-B-www.fesliyanstudios.com.mp3'
 y, sr = librosa.load(string01)
 
 counts = np.float32(range(0,len(y)))
